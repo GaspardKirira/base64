@@ -1,0 +1,102 @@
+{
+  "library": {
+    "name": "base64",
+    "env_var": "VIX_LIB_PATH",
+    "search_paths": []
+  },
+  "functions": [
+    {
+      "name": "base64_ffi_version",
+      "restype": "vix_str",
+      "args": [
+        {
+          "name": "st",
+          "type": "vix_status_ptr"
+        }
+      ]
+    },
+    {
+      "name": "base64_encode",
+      "restype": "int",
+      "args": [
+        {
+          "name": "in_ptr",
+          "type": "u8_ptr"
+        },
+        {
+          "name": "in_len",
+          "type": "size_t"
+        },
+        {
+          "name": "out_ptr",
+          "type": "u8_ptr"
+        },
+        {
+          "name": "out_cap",
+          "type": "size_t"
+        },
+        {
+          "name": "out_len",
+          "type": "size_t_ptr"
+        },
+        {
+          "name": "st",
+          "type": "vix_status_ptr"
+        }
+      ]
+    },
+    {
+      "name": "base64_decode",
+      "restype": "int",
+      "args": [
+        {
+          "name": "in_ptr",
+          "type": "u8_ptr"
+        },
+        {
+          "name": "in_len",
+          "type": "size_t"
+        },
+        {
+          "name": "out_ptr",
+          "type": "u8_ptr"
+        },
+        {
+          "name": "out_cap",
+          "type": "size_t"
+        },
+        {
+          "name": "out_len",
+          "type": "size_t_ptr"
+        },
+        {
+          "name": "st",
+          "type": "vix_status_ptr"
+        }
+      ]
+    }
+  ],
+  "python": {
+    "package": "base64",
+    "exports": [
+      "api"
+    ],
+    "api": [
+      {
+        "name": "version",
+        "calls": "base64_ffi_version",
+        "kind": "version"
+      },
+      {
+        "name": "encode",
+        "calls": "base64_encode",
+        "kind": "bytes_to_str"
+      },
+      {
+        "name": "decode",
+        "calls": "base64_decode",
+        "kind": "str_to_bytes"
+      }
+    ]
+  }
+}

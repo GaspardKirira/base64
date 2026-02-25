@@ -1,0 +1,12 @@
+{
+  "dependencies": [
+    {
+      "commit": "52c37db9a0da669a429ace396466381b6a4f0808",
+      "id": "vixcpp/vix_ffi",
+      "repo": "https://github.com/vixcpp/vix-ffi",
+      "tag": "v0.1.0",
+      "version": "0.1.0"
+    }
+  ],
+  "lockVersion": 1
+}
